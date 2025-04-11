@@ -28,10 +28,24 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     const root = window.document.documentElement;
     
+    // Remove existing classes
     root.classList.remove("light", "dark");
+    
+    // Add new theme class
     root.classList.add(theme);
     
+    // Apply theme transition class
+    root.classList.add("theme-transition");
+    
+    // Store preference
     localStorage.setItem("theme", theme);
+    
+    // Remove transition class after animation completes to prevent transition on page load
+    const transitionTimeout = setTimeout(() => {
+      root.classList.remove("theme-transition");
+    }, 300);
+    
+    return () => clearTimeout(transitionTimeout);
   }, [theme]);
 
   const toggleTheme = () => {

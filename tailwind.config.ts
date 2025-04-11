@@ -67,7 +67,7 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Custom color palette
+				// Enhanced color palette with more variations
 				fund: {
 					purple: {
 						light: '#9b87f5',
@@ -112,16 +112,38 @@ export default {
 						opacity: '1',
 						transform: 'translateY(0)'
 					}
+				},
+				'slide-up': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(20px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
+				},
+				'pulse-slow': {
+					'0%, 100%': {
+						opacity: '1'
+					},
+					'50%': {
+						opacity: '0.8'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				'fade-in': 'fade-in 0.3s ease-out'
+				'fade-in': 'fade-in 0.3s ease-out',
+				'slide-up': 'slide-up 0.4s ease-out',
+				'pulse-slow': 'pulse-slow 3s infinite'
 			},
 			backgroundImage: {
 				'gradient-purple': 'linear-gradient(90deg, #7E69AB, #9b87f5)',
 				'gradient-blue': 'linear-gradient(90deg, #0EA5E9, #33C3F0)',
+				'gradient-purple-blue': 'linear-gradient(90deg, #7E69AB, #1EAEDB)',
+				'gradient-dark': 'linear-gradient(90deg, #1A1F2C, #2D3748)',
 			}
 		}
 	},

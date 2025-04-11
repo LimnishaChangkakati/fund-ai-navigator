@@ -9,10 +9,14 @@ export function ThemeToggle() {
 
   return (
     <Button
-      variant="ghost"
+      variant="outline"
       size="icon"
       onClick={toggleTheme}
-      className="rounded-full"
+      className={`rounded-full w-10 h-10 transition-all duration-300 ${
+        theme === "dark" 
+          ? "bg-gradient-to-br from-fund-purple-dark to-slate-900 border-fund-purple hover:border-fund-purple-light" 
+          : "bg-gradient-to-br from-white to-blue-50 border-fund-blue hover:border-fund-blue-dark"
+      }`}
       aria-label="Toggle theme"
     >
       {theme === "dark" ? (
@@ -20,6 +24,7 @@ export function ThemeToggle() {
       ) : (
         <Moon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all text-fund-purple" />
       )}
+      <span className="sr-only">{theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}</span>
     </Button>
   );
 }

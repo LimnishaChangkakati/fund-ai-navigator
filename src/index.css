@@ -74,6 +74,13 @@
 
   body {
     @apply bg-background text-foreground antialiased;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  }
+
+  .theme-transition * {
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
   }
 
   .glass {
@@ -102,4 +109,55 @@
   .hover-card {
     @apply transition-all duration-300 hover:scale-[1.02] hover:shadow-lg;
   }
+  
+  .gradient-purple {
+    @apply bg-gradient-to-r from-fund-purple to-fund-purple-light;
+  }
+  
+  .gradient-blue {
+    @apply bg-gradient-to-r from-fund-blue to-fund-blue-light;
+  }
+  
+  .gradient-purple-blue {
+    @apply bg-gradient-to-r from-fund-purple via-fund-purple-light to-fund-blue;
+  }
+  
+  .gradient-card {
+    @apply bg-gradient-to-br from-white to-blue-50 dark:from-gray-900 dark:to-fund-purple-dark/30;
+  }
+  
+  .gradient-hero {
+    @apply bg-gradient-to-b from-blue-50 to-indigo-50 dark:from-gray-900 dark:to-fund-purple-dark/50;
+  }
+}
+
+/* Additional animation classes */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.slide-in {
+  animation: slideIn 0.5s ease-out forwards;
+}
+
+.delayed-1 {
+  animation-delay: 0.1s;
+}
+
+.delayed-2 {
+  animation-delay: 0.2s;
+}
+
+.delayed-3 {
+  animation-delay: 0.3s;
 }
