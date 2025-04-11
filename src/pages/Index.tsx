@@ -492,7 +492,7 @@ export default function Index() {
                                       </li>
                                       <li className="flex items-start">
                                         <ChevronRight className="h-4 w-4 mr-1 mt-1 text-red-500" />
-                                        <span>Short-term needs (< 3 years)</span>
+                                        <span>Short-term needs (less than 3 years)</span>
                                       </li>
                                       <li className="flex items-start">
                                         <ChevronRight className="h-4 w-4 mr-1 mt-1 text-red-500" />
